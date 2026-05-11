@@ -1,29 +1,229 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-   <meta charset="UTF-8">
-   <meta name="viewport" content="width=device-width; initial-scale=1.0">
-  </head>
-  <body>
-    <nav>
-     <ul>
-      <li>Inicio</li>
-       <li>
-        <a href="acerca-de-mi.html">Acerca de</a>
-      </li> 
-       <li>
-        <a href="proyectos.html">Portafolio</a>
-      </li> 
-       <li>
-        <a href="contacto.html">Contacto</a>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wireframe Combinado</title>
+    <style>
+        /* === RESET BÁSICO === */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            padding: 40px;
+            color: #000;
+            background-color: #fff;
+        }
+
+        /* === CABECERA (HEADER) === */
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-bottom: 20px;
+        }
+
+        .logo-placeholder {
+            width: 90px;
+            height: 90px;
+            border: 1px solid #999;
+            background: 
+                linear-gradient(to bottom right, transparent calc(50% - 1px), #999 calc(50%), transparent calc(50% + 1px)),
+                linear-gradient(to top right, transparent calc(50% - 1px), #999 calc(50%), transparent calc(50% + 1px));
+        }
+
+        /* Tu Navegación combinada con el CSS del Wireframe */
+        nav ul {
+            display: flex;
+            gap: 25px;
+            list-style: none; /* Quita los puntos de la lista */
+            font-weight: bold;
+            font-size: 14px;
+        }
+        
+        nav ul li, nav ul li a {
+            text-decoration: none; /* Quita el subrayado de los links */
+            color: #000;
+            cursor: pointer;
+        }
+
+        .header-right {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 10px;
+            font-weight: bold;
+            font-size: 20px;
+        }
+
+        .search-container {
+            display: flex;
+            gap: 5px;
+        }
+
+        .search-container input {
+            border: 1px solid #ccc;
+            padding: 5px 10px;
+            border-radius: 4px;
+            width: 120px;
+        }
+
+        .search-container button {
+            background-color: #fff;
+            border: 1px solid #6ccb80;
+            color: #6ccb80;
+            padding: 5px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        /* === BARRA AZUL (BANNER) === */
+        .banner {
+            background-color: #5b9bd5;
+            color: white;
+            padding: 8px 20px;
+            font-size: 11px;
+            margin-bottom: 60px;
+        }
+
+        /* === SECCIÓN PRINCIPAL (HERO) === */
+        .hero {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 40px;
+            margin-bottom: 60px;
+        }
+
+        .hero-text {
+            flex: 1;
+            max-width: 600px;
+        }
+
+        .hero-text h1 {
+            font-size: 2.2rem;
+            margin-bottom: 40px;
+        }
+
+        .hero-text p {
+            font-size: 18px; 
+            line-height: 1.5;
+            margin-bottom: 40px;
+            color: #333;
+        }
+
+        .cta-container {
+            text-align: left;
+        }
+
+        .cta-button {
+            background-color: #666;
+            color: white;
+            border: none;
+            padding: 25px 80px;
+            border-radius: 10px;
+            font-size: 10px;
+            cursor: pointer;
+        }
+
+        /* Columna Derecha (Silueta) */
+        .hero-image {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-end;
+        }
+
+        .avatar-head {
+            width: 130px;
+            height: 130px;
+            border: 1px solid #666;
+            border-radius: 50%;
+            background-color: white;
+            position: relative;
+            z-index: 2;
+            margin-bottom: -15px;
+        }
+
+        .avatar-shoulders {
+            width: 280px;
+            height: 200px;
+            border: 1px solid #666;
+            border-top-left-radius: 140px;
+            border-top-right-radius: 140px;
+            background-color: white;
+            border-bottom: none;
+        }
+
+        /* === PIE DE PÁGINA === */
+        .footer-description {
+            font-style: italic;
+            font-size: 13px;
+            color: #666;
+            text-align: justify;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo-placeholder"></div>
+        
+        <nav>
+            <ul>
+                <li>Inicio</li>
+                <li><a href="acerca-de-mi.html">Acerca de</a></li> 
+                <li><a href="proyectos.html">Portafolio</a></li> 
+                <li><a href="contacto.html">Contacto</a></li>
+                <li><a href="blog.html">Blog</a></li>
+            </ul>   
+        </nav>
+
+        <div class="header-right">
+            <div class="social-icons">
+                <span>f</span>
+                <span>𝕏</span>
+                <span>in</span>
+            </div>
+            <div class="search-container">
+                <input type="text" placeholder="Buscar">
+                <button>Buscar</button>
+            </div>
+        </div>
+    </header>
+
+    <div class="banner">
+        De la potencia al acto. Esa es la esencia del autor de esta web
+    </div>
+
+    <main class="hero">
+        <div class="hero-text">
+            <h1>Hola Mundo</h1>
+            <p>Bienvenidos al blog personal</p> 
             
-       </li>
-        <li>
-        <a href="blog.html">Blog</a>
-        </li>
-     </ul>   
-    </nav>
-   <h1>Hola Mundo</h1>
-   <p>Bienvenidos al blog personal</p> 
-  </body>
+            <div class="cta-container">
+                <button class="cta-button">Normal</button>
+            </div>
+        </div>
+
+        <div class="hero-image">
+            <div class="avatar-head"></div>
+            <div class="avatar-shoulders"></div>
+        </div>
+    </main>
+
+    <footer class="footer-description">
+        El objetivo es causar impacto y dirigir el tráfico. Para este efecto, se usa un título atractivo que sintetice el propósito del sitio, acompañado de un párrafo corto que, de soporte a la idea, una imagen mía a un costado para reafirmar la identidad que tiene de eje y un botón que destaque la Call to Action para navegar por el portal.
+    </footer>
+
+</body>
 </html>
