@@ -5,7 +5,6 @@
   --color-secundario: #db641f;
   --color-texto: #ffffff;
   --color-tarjeta: #af471d;
-  /* Corrección: Añadidas fuentes de respaldo por seguridad */
   --fuente: 'Bahnschrift', 'Segoe UI', Arial, sans-serif; 
 }
 
@@ -19,9 +18,9 @@
 body {
   background-color: var(--color-fondo);
   color: var(--color-texto);
-  font-family: var(--fuente); /* Corrección: Se eliminó el duplicado de abajo */
+  font-family: var(--fuente); 
   line-height: 1.7;
-  max-width: 1200px; /* Ampliado para dar aire a la cabecera moderna */
+  max-width: 1800px;
   margin: 0 auto;
   padding: 20px;
 }
@@ -30,53 +29,59 @@ body {
    CABECERA Y NAVBAR MODERNA
    ========================================================================== */
 
+/* ==========================================================================
+   CABECERA UNIFICADA (MODO ESCRITORIO)
+   ========================================================================== */
+
 .main-header {
   display: flex;
-  flex-direction: column;
-  gap: 15px;
-  background-color: rgba(116, 37, 0, 0.432);
-  padding: 20px;
+  justify-content: space-between; /* Distribuye: Logo Izq | Menú Centro | Buscador Der */
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.2);
+  padding: 15px 25px;
   border-radius: 12px;
   margin-bottom: 30px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
 }
 
-/* Fila Superior: Redes y Buscador */
+/* Caja del Logo */
+.logo-placeholder {
+  background-color: var(--color-tarjeta);
+  color: var(--color-fondo);
+  padding: 8px 20px;
+  border-radius: 6px;
+  font-weight: bold;
+  white-space: nowrap; /* Evita que el texto se rompa en dos líneas */
+}
 
-.header-top {
+/* Contenedor de la navegación */
+.nav-bar {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  flex-wrap: wrap;
-  gap: 15px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  padding-bottom: 15px;
 }
 
-/* Redes Sociales */
-.social-links {
+/* Lista de enlaces horizontales */
+.nav-menu {
+  list-style: none;
+  padding: 0;
   display: flex;
-  gap: 12px;
+  gap: 15px; /* Espaciado entre pestañas */
 }
 
-.social-links a {
+.nav-link {
   color: var(--color-texto);
   text-decoration: none;
-  background-color: var(--color-primario);
-  width: 35px;
-  height: 35px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-  font-weight: bold;
-  font-size: 0.9rem;
-  transition: background-color 0.3s ease, transform 0.2s ease;
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 8px 14px;
+  border-radius: 6px;
+  transition: color 0.3s ease, background-color 0.3s ease;
 }
 
-.social-links a:hover {
+.nav-link:hover, 
+.nav-link.active {
+  color: var(--color-texto);
   background-color: var(--color-secundario);
-  transform: translateY(-3px);
 }
 
 /* Barra de Búsqueda */
@@ -100,9 +105,9 @@ body {
   border: none;
   color: var(--color-texto);
   font-family: var(--fuente);
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   outline: none;
-  width: 200px;
+  width: 160px; /* Un poco más angosto para encajar mejor en la barra */
 }
 
 .search-form input::placeholder {
@@ -191,6 +196,14 @@ body {
 }
 
 @media (max-width: 768px) {
+  .main-header {
+    padding: 15px;
+  }
+  
+  /* Ocultamos el buscador en la barra superior móvil para que solo queden Logo y ☰ */
+  .main-header > .search-form {
+    display: none; 
+  }
   /* Hacemos visibles los botones interactivos */
   .menu-toggle {
     display: block;
@@ -281,5 +294,50 @@ body {
   .nav-overlay.open {
     opacity: 1;
     pointer-events: auto;
+  }
+}
+
+/* ==========================================================================
+   BANNERS Y FOOTERS
+   ========================================================================== */
+
+banner-horizontal {
+  display: flex;
+  justify-content: center; /* Separa el texto del botón */
+  align-items: center;            /* Centra los elementos verticalmente */
+  background-color: #ff9114dc ; /* Usa el naranja claro de tu paleta */
+  color: var(--color-tarjeta);             /* Texto oscuro para contraste */
+  padding: 20px 30px;
+  border-radius: 12px;
+  margin: 20px 0;
+  box-shadow: 0 4px 15px rgba(20, 20, 20, 0.719);
+  gap: 5px; /* Espacio mínimo si el texto se acerca al botón */
+}
+
+/* Bloque de textos internos */
+.banner-content {
+  flex: 1; /* Permite que el texto ocupe todo el espacio sobrante */
+}
+
+.banner-content h3 {
+  font-size: 1.2rem;
+  margin-bottom: 2px;
+  color: var(--color-texto); /* Título contrastante */
+}
+
+.banner-content p {
+  font-size: 1rem;
+  line-height: 1.4;
+  margin: 0;
+  opacity: 0.9;
+}
+/* ==========================================================================
+   COMPORTAMIENTO RESPONSIVO
+   ========================================================================== */
+@media (max-width: 1800px) {
+  .banner-horizontal {
+    flex-direction: column; /* Se apila verticalmente en celulares */
+    text-align: center;
+    padding: 20px;
   }
 }

@@ -9,42 +9,32 @@
   </head>
   <body>
   <header class="main-header">
-    <div class="header-top">
-        <div class="logo-placeholder">Logo</div>
-        
-        <div class="social-links">
-            <a href="#" aria-label="Facebook">Fb</a>
-            <a href="#" aria-label="X (Twitter)">X</a>
-            <a href="#" aria-label="Instagram">Ig</a>
-            <a href="#" aria-label="YouTube">Yt</a>
-        </div>
-        
-        <form class="search-form" action="#" method="GET">
-            <input type="text" placeholder="Buscar..." name="search" required>
-            <button type="submit" aria-label="Buscar">🔍</button>
-        </form>
-    </div>
-
+    <!-- 1. Logo a la izquierda -->
+    <div class="logo-placeholder">Logo</div>
+    
+    <!-- 2. Menú de 5 páginas en el centro -->
     <nav class="nav-bar">
-    <!-- Botón Hamburguesa (Solo se verá en móviles) -->
-    <button class="menu-toggle" aria-label="Abrir menú">☰</button>
+        <!-- Botón hamburguesa (se mantiene oculto en PC, listo para móvil) -->
+        <button class="menu-toggle" aria-label="Abrir menú">☰</button>
+        <div class="nav-overlay"></div>
 
-    <!-- Fondo oscuro detrás del menú lateral -->
-    <div class="nav-overlay"></div>
+        <ul class="nav-menu">
+            <li class="close-menu-container">
+                <button class="menu-close" aria-label="Cerrar menú">✕</button>
+            </li>
+            <li><a href="index.html" class="nav-link">Inicio</a></li>
+            <li><a href="acerca-de-mi.html" class="nav-link">Acerca de</a></li> 
+            <li><a href="proyectos.html" class="nav-link">Portafolio</a></li> 
+            <li><a href="blog.html" class="nav-link active">Blog</a></li>
+            <li><a href="contacto.html" class="nav-link">Contacto</a></li>
+        </ul>   
+    </nav>
 
-    <!-- Menú de navegación (Se convertirá en lateral) -->
-    <ul class="nav-menu">
-        <!-- Botón para cerrar dentro del menú lateral -->
-        <li class="close-menu-container">
-            <button class="menu-close" aria-label="Cerrar menú">✕</button>
-        </li>
-        <li><a href="index.html" class="nav-link">Inicio</a></li>
-        <li><a href="acerca-de-mi.html" class="nav-link">Acerca de</a></li> 
-        <li><a href="proyectos.html" class="nav-link">Portafolio</a></li> 
-        <li><a href="blog.html" class="nav-link active">Blog</a></li>
-        <li><a href="contacto.html" class="nav-link">Contacto</a></li>
-    </ul>   
-</nav>
+    <!-- 3. Barra de búsqueda a la derecha -->
+    <form class="search-form" action="#" method="GET">
+        <input type="text" placeholder="Buscar..." name="search" required>
+        <button type="submit" aria-label="Buscar">🔍</button>
+    </form>
 </header>
 <script>
     const menuToggle = document.querySelector('.menu-toggle');
