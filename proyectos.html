@@ -1,30 +1,95 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-   <meta charset="UTF-8">
-   <meta name="viewport" content="width=device-width; initial-scale=1.0">
-  </head>
-  <body>
-        <nav>
-     <ul>
-      <li>
-        <a href="index.html">Inicio</a>     
-        </li>
-       <li>
-        <a href="acerca-de-mi.html">Acerca de</a>
-      </li> 
-       <li>
-        Portafolio
-      </li> 
-       <li>
-        <a href="contacto.html">Contacto</a>
-       </li>
-        <li>
-        <a href="blog.html">Blog</a>
-        </li>
-     </ul>   
-    </nav>
-   <h1>Portafolio</h1>
-   <p>Mis contribuciones hasta el momento</p> 
-  </body>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    /* Estilos generales para mantener la coherencia */
+    body {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+      font-family: sans-serif;
+    }
+    nav ul {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      gap: 15px;
+    }
+    
+    /* Estilos para el portafolio y los placeholders */
+    .galeria-portafolio {
+      display: grid;
+      /* Crea columnas que se adaptan al tamaño de la pantalla */
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+      gap: 30px; /* Este es el espacio (separación) entre cada proyecto */
+      margin-top: 30px;
+    }
+    
+    .proyecto {
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+    }
+
+    /* Estilo del recuadro que simula la imagen */
+    .placeholder-imagen {
+      width: 100%;
+      height: 200px;
+      background-color: #e0e0e0; /* Color gris base */
+      border: 2px dashed #999; /* Borde punteado */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #666;
+      font-weight: bold;
+      border-radius: 8px; /* Bordes un poco redondeados */
+      margin-bottom: 15px; /* Espacio entre la "imagen" y el título del proyecto */
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <ul>
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="acerca-de-mi.html">Acerca de</a></li> 
+      <li>Portafolio</li> 
+      <li><a href="contacto.html">Contacto</a></li>
+      <li><a href="blog.html">Blog</a></li>
+    </ul>   
+  </nav>
+
+  <h1>Portafolio</h1>
+  <p>Mis contribuciones hasta el momento</p> 
+
+  <div class="galeria-portafolio">
+    
+    <div class="proyecto">
+      <div class="placeholder-imagen">Espacio para Imagen 1</div>
+      <h3>Nombre del Proyecto</h3>
+      <p>Breve descripción de lo que hiciste en este proyecto.</p>
+    </div>
+
+    <div class="proyecto">
+      <div class="placeholder-imagen">Espacio para Imagen 2</div>
+      <h3>Nombre del Proyecto</h3>
+      <p>Breve descripción de lo que hiciste en este proyecto.</p>
+    </div>
+
+    <div class="proyecto">
+      <div class="placeholder-imagen">Espacio para Imagen 3</div>
+      <h3>Nombre del Proyecto</h3>
+      <p>Breve descripción de lo que hiciste en este proyecto.</p>
+    </div>
+
+    <div class="proyecto">
+      <div class="placeholder-imagen">Espacio para Imagen 4</div>
+      <h3>Nombre del Proyecto</h3>
+      <p>Breve descripción de lo que hiciste en este proyecto.</p>
+    </div>
+
+  </div>
+
+</body>
 </html>
