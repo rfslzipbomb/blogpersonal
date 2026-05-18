@@ -1,10 +1,10 @@
 /* PALETA DE COLORES DE LA PAGINA*/
 :root {
-  --color-fondo: #753F00;
-  --color-primario: #AD5C00;
-  --color-secundario: #FF8800;
+  --color-fondo: #462704dc;
+  --color-primario: #df7d0d;
+  --color-secundario: #db641f;
   --color-texto: #ffffff;
-  --color-tarjeta: #FFB35C;
+  --color-tarjeta: #af471d;
   /* Corrección: Añadidas fuentes de respaldo por seguridad */
   --fuente: 'Bahnschrift', 'Segoe UI', Arial, sans-serif; 
 }
@@ -34,7 +34,7 @@ body {
   display: flex;
   flex-direction: column;
   gap: 15px;
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: rgba(116, 37, 0, 0.432);
   padding: 20px;
   border-radius: 12px;
   margin-bottom: 30px;
