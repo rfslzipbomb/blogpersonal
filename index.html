@@ -3,203 +3,69 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wireframe Combinado</title>
-    <style>
-        /* === RESET BÁSICO === */
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: Arial, sans-serif;
-        }
-
-        body {
-            padding: 40px;
-            color: #000;
-            background-color: #fff;
-        }
-
-        /* === CABECERA (HEADER) === */
-        header {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding-bottom: 20px;
-        }
-
-        .logo-placeholder {
-            width: 90px;
-            height: 90px;
-            border: 1px solid #999;
-            background: 
-                linear-gradient(to bottom right, transparent calc(50% - 1px), #999 calc(50%), transparent calc(50% + 1px)),
-                linear-gradient(to top right, transparent calc(50% - 1px), #999 calc(50%), transparent calc(50% + 1px));
-        }
-
-        /* Tu Navegación combinada con el CSS del Wireframe */
-        nav ul {
-            display: flex;
-            gap: 25px;
-            list-style: none; /* Quita los puntos de la lista */
-            font-weight: bold;
-            font-size: 14px;
-        }
-        
-        nav ul li, nav ul li a {
-            text-decoration: none; /* Quita el subrayado de los links */
-            color: #000;
-            cursor: pointer;
-        }
-
-        .header-right {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-        }
-
-        .social-icons {
-            display: flex;
-            gap: 10px;
-            font-weight: bold;
-            font-size: 20px;
-        }
-
-        .search-container {
-            display: flex;
-            gap: 5px;
-        }
-
-        .search-container input {
-            border: 1px solid #ccc;
-            padding: 5px 10px;
-            border-radius: 4px;
-            width: 120px;
-        }
-
-        .search-container button {
-            background-color: #fff;
-            border: 1px solid #6ccb80;
-            color: #6ccb80;
-            padding: 5px 15px;
-            border-radius: 4px;
-            cursor: pointer;
-        }
-
-        /* === BARRA AZUL (BANNER) === */
-        .banner {
-            background-color: #5b9bd5;
-            color: white;
-            padding: 8px 20px;
-            font-size: 11px;
-            margin-bottom: 60px;
-        }
-
-        /* === SECCIÓN PRINCIPAL (HERO) === */
-        .hero {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0 40px;
-            margin-bottom: 60px;
-        }
-
-        .hero-text {
-            flex: 1;
-            max-width: 600px;
-        }
-
-        .hero-text h1 {
-            font-size: 2.2rem;
-            margin-bottom: 40px;
-        }
-
-        .hero-text p {
-            font-size: 18px; 
-            line-height: 1.5;
-            margin-bottom: 40px;
-            color: #333;
-        }
-
-        .cta-container {
-            text-align: left;
-        }
-
-        .cta-button {
-            background-color: #666;
-            color: white;
-            border: none;
-            padding: 25px 80px;
-            border-radius: 10px;
-            font-size: 10px;
-            cursor: pointer;
-        }
-
-        /* Columna Derecha (Silueta) */
-        .hero-image {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: flex-end;
-        }
-
-        .avatar-head {
-            width: 130px;
-            height: 130px;
-            border: 1px solid #666;
-            border-radius: 50%;
-            background-color: white;
-            position: relative;
-            z-index: 2;
-            margin-bottom: -15px;
-        }
-
-        .avatar-shoulders {
-            width: 280px;
-            height: 200px;
-            border: 1px solid #666;
-            border-top-left-radius: 140px;
-            border-top-right-radius: 140px;
-            background-color: white;
-            border-bottom: none;
-        }
-
-        /* === PIE DE PÁGINA === */
-        .footer-description {
-            font-style: italic;
-            font-size: 13px;
-            color: #666;
-            text-align: justify;
-        }
-    </style>
+    <title>Landing Page</title>
+    <link rel="stylesheet" href="estilos.css">
 </head>
 <body>
-
-    <header>
-        <div class="logo-placeholder"></div>
+<header class="main-header">
+    <div class="header-top">
+        <div class="logo-placeholder">Logo</div>
         
-        <nav>
-            <ul>
-                <li>Inicio</li>
-                <li><a href="acerca-de-mi.html">Acerca de</a></li> 
-                <li><a href="proyectos.html">Portafolio</a></li> 
-                <li><a href="contacto.html">Contacto</a></li>
-                <li><a href="blog.html">Blog</a></li>
-            </ul>   
-        </nav>
-
-        <div class="header-right">
-            <div class="social-icons">
-                <span>f</span>
-                <span>𝕏</span>
-                <span>in</span>
-            </div>
-            <div class="search-container">
-                <input type="text" placeholder="Buscar">
-                <button>Buscar</button>
-            </div>
+        <div class="social-links">
+            <a href="#" aria-label="Facebook">Fb</a>
+            <a href="#" aria-label="X (Twitter)">X</a>
+            <a href="#" aria-label="Instagram">Ig</a>
+            <a href="#" aria-label="YouTube">Yt</a>
         </div>
-    </header>
+        
+        <form class="search-form" action="#" method="GET">
+            <input type="text" placeholder="Buscar..." name="search" required>
+            <button type="submit" aria-label="Buscar">🔍</button>
+        </form>
+    </div>
+
+    <nav class="nav-bar">
+    <!-- Botón Hamburguesa (Solo se verá en móviles) -->
+    <button class="menu-toggle" aria-label="Abrir menú">☰</button>
+
+    <!-- Fondo oscuro detrás del menú lateral -->
+    <div class="nav-overlay"></div>
+
+    <!-- Menú de navegación (Se convertirá en lateral) -->
+    <ul class="nav-menu">
+        <!-- Botón para cerrar dentro del menú lateral -->
+        <li class="close-menu-container">
+            <button class="menu-close" aria-label="Cerrar menú">✕</button>
+        </li>
+        <li><a href="index.html" class="nav-link active">Inicio</a></li>
+        <li><a href="acerca-de-mi.html" class="nav-link">Acerca de</a></li> 
+        <li><a href="proyectos.html" class="nav-link">Portafolio</a></li> 
+        <li><a href="blog.html" class="nav-link">Blog</a></li>
+        <li><a href="contacto.html" class="nav-link">Contacto</a></li>
+    </ul>   
+</nav>
+</header>
+<script>
+    const menuToggle = document.querySelector('.menu-toggle');
+    const menuClose = document.querySelector('.menu-close');
+    const navMenu = document.querySelector('.nav-menu');
+    const navOverlay = document.querySelector('.nav-overlay');
+
+    // Función para abrir el menú
+    menuToggle.addEventListener('click', () => {
+        navMenu.classList.add('open');
+        navOverlay.classList.add('open');
+    });
+
+    // Función para cerrar el menú
+    const closeMenu = () => {
+        navMenu.classList.remove('open');
+        navOverlay.classList.remove('open');
+    };
+
+    menuClose.addEventListener('click', closeMenu);
+    navOverlay.addEventListener('click', closeMenu); // Se cierra también si tocas fuera
+</script>
 
     <div class="banner">
         De la potencia al acto. Esa es la esencia del autor de esta web
@@ -210,9 +76,6 @@
             <h1>Hola Mundo</h1>
             <p>Bienvenidos al blog personal</p> 
             
-            <div class="cta-container">
-                <button class="cta-button">Normal</button>
-            </div>
         </div>
 
         <div class="hero-image">
