@@ -1,20 +1,16 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-   <meta charset="UTF-8">
-   <meta name="viewport" content="width=device-width; initial-scale=1.0">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog</title>
-    <link rel="stylesheet" href="estilos.css">
-  </head>
-  <body>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog | Mi Portafolio</title>
+  <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
   <header class="main-header">
-    <!-- 1. Logo a la izquierda -->
     <div class="logo-placeholder">Logo</div>
     
-    <!-- 2. Menú de 5 páginas en el centro -->
     <nav class="nav-bar">
-        <!-- Botón hamburguesa (se mantiene oculto en PC, listo para móvil) -->
         <button class="menu-toggle" aria-label="Abrir menú">☰</button>
         <div class="nav-overlay"></div>
 
@@ -30,13 +26,49 @@
         </ul>   
     </nav>
 
-    <!-- 3. Barra de búsqueda a la derecha -->
     <form class="search-form" action="#" method="GET">
         <input type="text" placeholder="Buscar..." name="search" required>
         <button type="submit" aria-label="Buscar">🔍</button>
     </form>
-</header>
-<script>
+  </header>
+
+  <main class="contenedor-principal">
+    <h1>Entradas del Blog</h1>
+    <p>Aquí puedes leer mis redacciones personales sobre transformación digital, datos y planificación estratégica.</p> 
+
+    <div class="blog-grid">
+      
+      <article class="tarjeta-blog">
+        <h2>El poder de los datos en la toma de decisiones</h2>
+        <div class="fecha-etiqueta">Publicado el 15 de Mayo, 2026 • Análisis de Datos</div>
+        <p>En el entorno competitivo actual, depender únicamente de la intuición ya no es suficiente. El verdadero valor reside en saber interpretar la información para trazar estrategias efectivas.</p>
+        
+        <details>
+          <summary>Leer artículo completo...</summary>
+          <div class="contenido-expandido">
+            <p>Herramientas como Power BI o un manejo avanzado de Excel permiten estructurar grandes volúmenes de datos y transformarlos en insights accionables. Durante mi experiencia gestionando presupuestos y ciclos de ventas, he comprobado que una métrica bien leída puede significar la diferencia entre el estancamiento y el crecimiento.</p>
+            <p>El reto no está en recopilar datos, sino en hacer las preguntas correctas. La implementación de metodologías ágiles y un enfoque centrado en KPIs son fundamentales para liderar proyectos tecnológicos con éxito.</p>
+          </div>
+        </details>
+      </article>
+
+      <article class="tarjeta-blog">
+        <h2>Geopolítica y Mercados Digitales</h2>
+        <div class="fecha-etiqueta">Publicado el 2 de Mayo, 2026 • Estrategia</div>
+        <p>Cómo los eventos globales y las decisiones políticas internacionales afectan directamente la cadena de suministro de hardware y el desarrollo del comercio electrónico a nivel local.</p>
+        
+        <details>
+          <summary>Leer artículo completo...</summary>
+          <div class="contenido-expandido">
+            <p>Las normativas de comercio exterior y los tratados internacionales moldean las oportunidades para el e-commerce en nichos específicos. Entender este panorama es vital para proyectar el crecimiento sostenido de cualquier iniciativa digital en mercados emergentes.</p>
+          </div>
+        </details>
+      </article>
+
+    </div>
+  </main>
+
+  <script>
     const menuToggle = document.querySelector('.menu-toggle');
     const menuClose = document.querySelector('.menu-close');
     const navMenu = document.querySelector('.nav-menu');
@@ -56,8 +88,6 @@
 
     menuClose.addEventListener('click', closeMenu);
     navOverlay.addEventListener('click', closeMenu); // Se cierra también si tocas fuera
-</script>
-   <h1>Entradas del Blog</h1>
-   <p>Aqui puedes leer mis redacciones personales</p> 
-  </body>
+  </script>
+</body>
 </html>

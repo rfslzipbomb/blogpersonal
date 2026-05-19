@@ -1,3 +1,4 @@
+
 /* PALETA DE COLORES DE LA PAGINA*/
 :root {
   --color-fondo: #462704dc;
@@ -29,10 +30,6 @@ body {
    CABECERA Y NAVBAR MODERNA
    ========================================================================== */
 
-/* ==========================================================================
-   CABECERA UNIFICADA (MODO ESCRITORIO)
-   ========================================================================== */
-
 .main-header {
   display: flex;
   justify-content: space-between; /* Distribuye: Logo Izq | Menú Centro | Buscador Der */
@@ -58,6 +55,7 @@ body {
 .nav-bar {
   display: flex;
   align-items: center;
+  width: 100%;
 }
 
 /* Lista de enlaces horizontales */
@@ -65,15 +63,17 @@ body {
   list-style: none;
   padding: 0;
   display: flex;
-  gap: 15px; /* Espaciado entre pestañas */
+  justify-content: center;
+  gap: 25px;
+  flex-wrap: wrap;
 }
 
 .nav-link {
   color: var(--color-texto);
   text-decoration: none;
   font-weight: 600;
-  font-size: 1rem;
-  padding: 8px 14px;
+  font-size: 1.1rem;
+  padding: 8px 16px;
   border-radius: 6px;
   transition: color 0.3s ease, background-color 0.3s ease;
 }
@@ -126,64 +126,6 @@ body {
 
 .search-form button:hover {
   background-color: var(--color-secundario);
-}
-
-/* Barra de Navegación (Menu) */
-.nav-bar {
-  width: 100%;
-}
-
-.nav-menu {
-  list-style: none;
-  padding: 0;
-  display: flex;
-  justify-content: center;
-  gap: 25px;
-  flex-wrap: wrap;
-}
-
-.nav-link {
-  color: var(--color-texto);
-  text-decoration: none;
-  font-weight: 600;
-  font-size: 1.1rem;
-  padding: 8px 16px;
-  border-radius: 6px;
-  transition: color 0.3s ease, background-color 0.3s ease;
-}
-
-.nav-link:hover, 
-.nav-link.active {
-  color: var(--color-texto);
-  background-color: var(--color-secundario);
-}
-
-/* Ajuste Responsivo para móviles */
-@media (max-width: 600px) {
-  .header-top {
-    flex-direction: column;
-    text-align: center;
-  }
-  .nav-menu {
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-  }
-  .nav-link {
-    display: block;
-    width: 100%;
-    text-align: center;
-  }
-}
-
-
-/* Estilo rápido para mantener tu caja de logo original */
-.logo-placeholder {
-  background-color: var(--color-tarjeta);
-  color: var(--color-fondo);
-  padding: 8px 20px;
-  border-radius: 6px;
-  font-weight: bold;
 }
 
 /* ==========================================================================
@@ -301,28 +243,29 @@ body {
    BANNERS Y FOOTERS
    ========================================================================== */
 
-banner-horizontal {
+/* CORRECCIÓN: Faltaba el punto aquí */
+.banner-horizontal {
   display: flex;
-  justify-content: center; /* Separa el texto del botón */
-  align-items: center;            /* Centra los elementos verticalmente */
-  background-color: #ff9114dc ; /* Usa el naranja claro de tu paleta */
-  color: var(--color-tarjeta);             /* Texto oscuro para contraste */
-  padding: 20px 30px;
+  justify-content: center; 
+  align-items: center;            
+  background-color: #ff9114dc ; 
+  color: var(--color-tarjeta);             
+  padding: 10px 20px;
   border-radius: 12px;
   margin: 20px 0;
   box-shadow: 0 4px 15px rgba(20, 20, 20, 0.719);
-  gap: 5px; /* Espacio mínimo si el texto se acerca al botón */
+  gap: 5px; 
 }
 
-/* Bloque de textos internos */
 .banner-content {
-  flex: 1; /* Permite que el texto ocupe todo el espacio sobrante */
+  flex: 1; 
+  text-align: center;
 }
 
 .banner-content h3 {
   font-size: 1.2rem;
   margin-bottom: 2px;
-  color: var(--color-texto); /* Título contrastante */
+  color: var(--color-texto); 
 }
 
 .banner-content p {
@@ -331,13 +274,463 @@ banner-horizontal {
   margin: 0;
   opacity: 0.9;
 }
-/* ==========================================================================
-   COMPORTAMIENTO RESPONSIVO
-   ========================================================================== */
+
+.footer-description {
+  text-align: center;
+}
+
 @media (max-width: 1800px) {
   .banner-horizontal {
-    flex-direction: column; /* Se apila verticalmente en celulares */
+    flex-direction: column; 
     text-align: center;
     padding: 20px;
+  }
+}
+
+/* =========================================
+   ESTILOS PARA LA LANDING PAGE (HERO SECTION)
+   ========================================= */
+
+.hero-section {
+  width: 100%;
+  /* Quitamos el fondo blanco de la sección entera para separar los elementos */
+  background: transparent; 
+  padding: 40px 20px 0; /* El 0 al final es clave: quita el espacio inferior para que la imagen toque el piso */
+  display: flex;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+
+.hero-container {
+  max-width: 1100px;
+  width: 100%;
+  display: flex;
+  align-items: stretch; /* Permite que ambos lados compartan la misma altura base */
+  justify-content: space-between;
+  gap: 40px;
+}
+
+/* 1. EL NUEVO RECUADRO PARA EL TEXTO */
+.hero-text {
+  flex: 1.2; /* Le da un poquito más de ancho al texto que a la foto */
+  background-color: var(--color-tarjeta); /* Usamos el color de tu paleta */
+  padding: 50px 40px;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4); /* Sombra pronunciada para que resalte */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Centra verticalmente el contenido */
+  align-items: flex-start;
+  margin-bottom: 20px; /* Da un respiro en la parte inferior */
+}
+
+.hero-text h1 {
+  font-size: 2.6em;
+  color: var(--color-texto);
+  margin-bottom: 10px;
+  line-height: 1.1;
+}
+
+.hero-text p {
+  font-size: 1.1em;
+  color: rgba(255, 255, 255, 0.9); /* Blanco un poco suavizado para no cansar la vista */
+  line-height: 1.6;
+  margin-bottom: 30px;
+  text-align: left;
+}
+
+/* Estilos del Botón Call To Action (CTA) dentro del recuadro */
+.btn-cta {
+  display: inline-block;
+  background-color: var(--color-fondo); /* Botón oscuro para contrastar con el recuadro */
+  color: var(--color-texto);
+  padding: 12px 28px;
+  font-size: 1.1em;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.btn-cta:hover {
+  background-color: var(--color-primario);
+  transform: translateY(-2px);
+}
+
+/* 2. LA INTEGRACIÓN DE LA IMAGEN */
+.hero-image-wrapper {
+  flex: 1;
+  display: flex;
+  align-items: flex-end; /* ANCLAJE: Fuerza a que la imagen se pegue al borde de abajo */
+  justify-content: center;
+}
+
+.hero-img {
+  max-width: 100%;
+  height: auto;
+  max-height: 600px; /* Permite que la imagen sea más grande */
+  object-fit: contain;
+  object-position: bottom; /* Refuerza que el recorte quede abajo */
+  filter: drop-shadow(-15px 15px 15px rgba(0,0,0,0.5)); /* Sombra proyectada que le da efecto 3D */
+}
+
+/* Diseño adaptable (Móviles y Tablets pequeñas) */
+@media (max-width: 768px) {
+  .hero-container {
+    flex-direction: column-reverse; /* En celulares, la foto arriba y el texto abajo */
+    align-items: center;
+  }
+  
+  .hero-text {
+    align-items: center;
+    text-align: center;
+    padding: 30px 20px;
+  }
+  
+  .hero-text p {
+    text-align: center;
+  }
+  
+  .hero-text h1 {
+    font-size: 2em;
+  }
+}
+
+/* =========================================
+   ESTILOS PARA EL CONTENIDO PRINCIPAL Y BLOG
+   ========================================= */
+
+.contenedor-principal {
+  max-width: 800px;
+  margin: 40px auto; 
+  padding: 0 20px;
+  font-family: sans-serif;
+}
+
+.contenedor-principal p {
+  text-align: justify;
+  line-height: 1.6;
+}
+
+.blog-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  margin-top: 30px;
+}
+
+.tarjeta-blog {
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background-color: #ffffff;
+  color: #333; /* Asegura que el texto sea legible en la tarjeta blanca */
+}
+
+.tarjeta-blog:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+}
+
+.tarjeta-blog h2 {
+  margin-top: 0;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+.fecha-etiqueta {
+  font-size: 0.85em;
+  color: #777;
+  margin-bottom: 15px;
+}
+
+details {
+  margin-top: 15px;
+}
+
+summary {
+  cursor: pointer;
+  color: var(--color-primario);
+  font-weight: bold;
+  outline: none;
+  padding: 5px 0;
+  transition: color 0.2s;
+}
+
+summary:hover {
+  color: var(--color-secundario);
+  text-decoration: underline;
+}
+
+summary::marker, summary::-webkit-details-marker {
+  display: none;
+}
+
+summary::before {
+  content: "▶ ";
+  font-size: 0.8em;
+  display: inline-block;
+  transition: transform 0.2s;
+}
+
+details[open] summary::before {
+  transform: rotate(90deg);
+}
+
+.contenido-expandido {
+  margin-top: 15px;
+  padding-top: 15px;
+  border-top: 1px dashed #ccc;
+  animation: aparecer 0.4s ease-in-out;
+}
+
+@keyframes aparecer {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* =========================================
+   ESTILOS PARA EL CURRÍCULUM (ACERCA DE MI)
+   ========================================= */
+
+.cv-container {
+  max-width: 950px;
+  margin: 40px auto;
+  display: grid;
+  grid-template-columns: 300px 1fr; 
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+  background-color: #ffffff;
+  border-radius: 8px;
+  overflow: hidden; 
+}
+
+.cv-sidebar {
+  background-color: #e8eaed; 
+  padding: 40px 30px;
+  color: #333;
+}
+
+.cv-photo {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%; 
+  margin: 0 auto 30px auto;
+  display: block;
+  object-fit: cover; 
+  border: 4px solid #ffffff; 
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15); 
+}
+
+.cv-sidebar-section h3 {
+  border-bottom: 2px solid #bdc1c6;
+  padding-bottom: 5px;
+  margin-top: 25px;
+  margin-bottom: 15px;
+  font-size: 1.1em;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.cv-sidebar-section p, 
+.cv-sidebar-section ul {
+  font-size: 0.9em;
+  line-height: 1.5;
+  margin-bottom: 10px;
+}
+
+.cv-sidebar-section ul {
+  padding-left: 15px;
+}
+
+.cv-sidebar-section li {
+  margin-bottom: 8px;
+}
+
+.cv-main {
+  padding: 40px 50px;
+}
+
+.cv-header-info h1 {
+  margin: 0 0 5px 0;
+  font-size: 2.2em;
+  color: #202124;
+  letter-spacing: 1px;
+}
+
+.cv-header-info h2 {
+  margin: 0 0 30px 0;
+  font-size: 1em;
+  color: #5f6368;
+  letter-spacing: 1px;
+}
+
+.cv-section h3 {
+  color: #202124;
+  border-bottom: 2px solid #f1f3f4;
+  padding-bottom: 8px;
+  margin-top: 35px;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.cv-section p {
+  text-align: justify;
+  line-height: 1.6;
+  color: #3c4043;
+}
+
+.cv-job {
+  margin-bottom: 25px;
+}
+
+.cv-job h4 {
+  margin: 0 0 3px 0;
+  color: #202124;
+  font-size: 1.15em;
+}
+
+.cv-job span {
+  display: block;
+  font-size: 0.9em;
+  color: #5f6368;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.cv-job ul {
+  padding-left: 20px;
+  color: #3c4043;
+}
+
+.cv-job li {
+  margin-bottom: 8px;
+  line-height: 1.5;
+  text-align: justify;
+}
+
+@media (max-width: 768px) {
+  .cv-container {
+    grid-template-columns: 1fr; 
+    margin: 20px;
+  }
+  .cv-main {
+    padding: 30px 20px;
+  }
+}
+
+/* =========================================
+   ESTILOS PARA LA PÁGINA DE CONTACTO
+   ========================================= */
+
+.contacto-container {
+  max-width: 650px;
+  margin: 40px auto;
+  background-color: var(--color-tarjeta);
+  padding: 50px 40px;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.contacto-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.contacto-header h1 {
+  font-size: 2.5em;
+  margin-bottom: 10px;
+  color: var(--color-texto);
+  line-height: 1.2;
+}
+
+.contacto-header p {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 1.1em;
+}
+
+/* Estructura del Formulario */
+.formulario-contacto {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-group label {
+  font-weight: 600;
+  color: var(--color-texto);
+  font-size: 0.95em;
+  letter-spacing: 0.5px;
+}
+
+/* Estilos de las cajas de texto */
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 14px 15px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  background-color: rgba(255, 255, 255, 0.1); /* Fondo semitransparente */
+  color: var(--color-texto);
+  font-family: var(--fuente);
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.3s, box-shadow 0.3s, background-color 0.3s;
+}
+
+.form-group textarea {
+  resize: vertical; /* Permite agrandar la caja solo hacia abajo */
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+/* Efecto al hacer clic en las cajas de texto */
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: var(--color-primario);
+  box-shadow: 0 0 8px rgba(223, 125, 13, 0.6);
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+/* Botón de Enviar */
+.btn-enviar {
+  background-color: var(--color-fondo); /* Tono oscuro para contrastar con la tarjeta */
+  color: var(--color-texto);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 16px 20px;
+  font-size: 1.1em;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s, box-shadow 0.2s;
+  margin-top: 10px;
+}
+
+.btn-enviar:hover {
+  background-color: var(--color-primario);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Diseño adaptable (Móviles) */
+@media (max-width: 768px) {
+  .contacto-container {
+    padding: 35px 25px;
+    margin: 20px;
+  }
+  .contacto-header h1 {
+    font-size: 2em;
   }
 }

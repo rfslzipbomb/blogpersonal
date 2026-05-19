@@ -2,17 +2,15 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Acerca de</title>
-    <link rel="stylesheet" href="estilos.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Acerca de | Mi Portafolio</title>
+  <link rel="stylesheet" href="estilos.css">
 </head>
 <body>
-<header class="main-header">
-    <!-- 1. Logo a la izquierda -->
+  <header class="main-header">
     <div class="logo-placeholder">Logo</div>
     
-    <!-- 2. Menú de 5 páginas en el centro -->
     <nav class="nav-bar">
-        <!-- Botón hamburguesa (se mantiene oculto en PC, listo para móvil) -->
         <button class="menu-toggle" aria-label="Abrir menú">☰</button>
         <div class="nav-overlay"></div>
 
@@ -28,97 +26,113 @@
         </ul>   
     </nav>
 
-    <!-- 3. Barra de búsqueda a la derecha -->
     <form class="search-form" action="#" method="GET">
         <input type="text" placeholder="Buscar..." name="search" required>
         <button type="submit" aria-label="Buscar">🔍</button>
     </form>
-</header>
-<script>
+  </header>
+
+  <main class="cv-container">
+    
+    <aside class="cv-sidebar">
+      <img src="imagenes\mifoto.jpg" alt="Foto de Rafael" class="cv-photo">
+
+      <div class="cv-sidebar-section">
+        <h3>Contacto</h3>
+        <p>📍 Valle de los Chillos, Quito, Ecuador.</p>
+      </div>
+
+      <div class="cv-sidebar-section">
+        <h3>Habilidades</h3>
+        <ul>
+          <li><strong>Análisis de Datos:</strong> Excel, Power BI, SQL, IBM SPSS.</li>
+          <li><strong>Marketing Digital:</strong> HubSpot, Google Analytics.</li>
+          <li><strong>Blandas:</strong> Liderazgo, Oratoria, Manejo de stakeholders.</li>
+          <li><strong>Lenguajes:</strong> Inglés C2, Español Nativo.</li>
+        </ul>
+      </div>
+
+      <div class="cv-sidebar-section">
+        <h3>Educación</h3>
+        <p><strong>Universidad Politécnica Salesiana</strong><br>Licenciatura en Negocios Digitales (En Progreso)</p>
+        <p><strong>Universidad de las Fuerzas Armadas (ESPE)</strong><br>Licenciatura en Comercio Exterior (4 Niveles)</p>
+        <p><strong>Franz Schubert School</strong><br>Bachillerato General Unificado (2017)</p>
+      </div>
+    </aside>
+
+    <section class="cv-main">
+      <div class="cv-header-info">
+        <h1>RAFAEL ANTONIO SALAZAR ANDRADE</h1>
+        <h2>ESTUDIANTE DE NEGOCIOS DIGITALES Y ASPIRANTE A PROJECT MANAGER</h2>
+      </div>
+
+      <div class="cv-section">
+        <h3>Sobre Mí</h3>
+        <p>Futuro licenciado con un alto rendimiento académico y una sólida base en análisis de datos y planificación estratégica. Profesional bilingüe con un historial demostrado de excelencia académica e iniciativa emprendedora. Con experiencia en el uso de herramientas para impulsar la toma de decisiones basada en datos. Apasionado por la transformación digital y la geopolítica, busco incorporarme al equipo de una empresa tecnológica para aplicar metodologías ágiles y mis habilidades de liderazgo en proyectos tecnológicos.</p>
+      </div>
+
+      <div class="cv-section">
+        <h3>Experiencia</h3>
+        
+        <div class="cv-job">
+          <h4>Salesianos Ecuador (Non-Profit)</h4>
+          <span>Pasante de Marketing | 2025</span>
+          <ul>
+            <li><strong>Adquisiciones técnicas:</strong> Gestioné el ciclo de vida de las adquisiciones de software especializado en marketing.</li>
+            <li><strong>Asesoramiento estratégico:</strong> Desempeñé un papel clave como asesor en el diseño de campañas.</li>
+            <li><strong>Producción de contenidos:</strong> Supervisé la producción integral de contenidos promocionales.</li>
+          </ul>
+        </div>
+
+        <div class="cv-job">
+          <h4>Independent Technology Venture</h4>
+          <span>Administrador de E-Commerce Indie | 2021 - 2023</span>
+          <ul>
+            <li><strong>Desarrollo empresarial:</strong> Dirigí el ciclo de ventas de principio a fin, logrando ingresos aprox. de 5.000 dólares.</li>
+            <li><strong>Estrategia digital:</strong> Posicionamiento orgánico en comunidades de nicho.</li>
+            <li><strong>Gestión financiera:</strong> Gestioné el flujo de caja y la reinversión de existencias.</li>
+          </ul>
+        </div>
+
+        <div class="cv-job">
+          <h4>ConQuito (Agencia Metropolitana)</h4>
+          <span>Auxiliar de Campo y Análisis de Datos | 2019 - 2020</span>
+          <ul>
+            <li><strong>Integridad y análisis de datos:</strong> Gestionar y procesar grandes conjuntos de datos.</li>
+            <li><strong>Operaciones sobre el terreno:</strong> Coordinar la logística para recopilación de datos y entrevistas.</li>
+          </ul>
+        </div>
+
+        <div class="cv-job">
+          <h4>AECOMEX</h4>
+          <span>Secretario General & Coordinador Estratégico | 2019 - 2020</span>
+          <ul>
+            <li><strong>Gestión de eventos:</strong> Coordiné eventos académicos y actué como enlace estudiantil.</li>
+            <li><strong>Gobernanza y Finanzas:</strong> Redacté actas ejecutivas y me encargué de la asignación de recursos.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script>
     const menuToggle = document.querySelector('.menu-toggle');
     const menuClose = document.querySelector('.menu-close');
     const navMenu = document.querySelector('.nav-menu');
     const navOverlay = document.querySelector('.nav-overlay');
 
-    // Función para abrir el menú
     menuToggle.addEventListener('click', () => {
         navMenu.classList.add('open');
         navOverlay.classList.add('open');
     });
 
-    // Función para cerrar el menú
     const closeMenu = () => {
         navMenu.classList.remove('open');
         navOverlay.classList.remove('open');
     };
 
     menuClose.addEventListener('click', closeMenu);
-    navOverlay.addEventListener('click', closeMenu); // Se cierra también si tocas fuera
-</script>
-
-  <h1>Sobre Mí</h1>
-  <p>Futuro licenciado con un alto rendimiento académico y una sólida base en análisis de datos y planificación estratégica. Profesional bilingüe con un historial demostrado de excelencia académica e iniciativa emprendedora. Con experiencia en el uso de herramientas para impulsar la toma de decisiones basada en datos. Apasionado por la transformación digital y la geopolítica, busco incorporarme al equipo de una empresa tecnológica para aplicar metodologías ágiles y mis habilidades de liderazgo en proyectos tecnológicos.</p>
-
-  <h1>Experiencia</h1>
-
-  <h2>Salesianos Ecuador (Non-Profit)</h2>
-  <h3>Pasante de Marketing | 2025</h3>
-  <ul>
-    <li><strong>Adquisiciones técnicas:</strong> Gestioné el ciclo de vida de las adquisiciones de software especializado en marketing, evaluando los requisitos técnicos y las soluciones de los proveedores.</li>
-    <li><strong>Asesoramiento estratégico:</strong> Desempeñé un papel clave como asesor en el diseño de campañas, alineando los conceptos creativos con los objetivos de la organización para maximizar la participación del público.</li>
-    <li><strong>Producción de contenidos:</strong> Supervisé la producción integral de contenidos promocionales de gran impacto.</li>
-  </ul>
-
-  <h2>Independent Technology Venture</h2>
-  <h3>Administrador de E-Commerce Indie | 2021 - 2023</h3>
-  <ul>
-    <li><strong>Desarrollo empresarial:</strong> Dirigí el ciclo de ventas de principio a fin en el sector de la electrónica de consumo, logrando unos ingresos aproximados de 5.000 dólares.</li>
-    <li><strong>Estrategia digital:</strong> Puse en práctica estrategias de posicionamiento orgánico en comunidades especializadas de nicho.</li>
-    <li><strong>Gestión financiera:</strong> Gestioné el flujo de caja y la reinversión de existencias para ampliar la oferta de productos.</li>
-  </ul>
-
-  <h2>ConQuito (Agencia Metropolitana)</h2>
-  <h3>Auxiliar de Campo y Análisis de Datos | 2019 - 2020</h3>
-  <ul>
-    <li><strong>Integridad y análisis de datos:</strong> Gestionar y procesar grandes conjuntos de datos utilizando IBM SPSS y Excel avanzado.</li>
-    <li><strong>Operaciones sobre el terreno:</strong> Coordinar la logística para la recopilación de datos y entrevistas, cumpliendo sistemáticamente los plazos y KPI del proyecto.</li>
-    <li><strong>Elaboración de informes:</strong> Sintetizar los resultados cuantitativos y cualitativos en conclusiones prácticas.</li>
-  </ul>
-
-  <h2>AECOMEX (Asociación de Estudiantes)</h2>
-  <h3>Secretario General & Coordinador Estratégico | 2019 - 2020</h3>
-  <ul>
-    <li><strong>Gestión de eventos:</strong> Coordiné eventos académicos y actividades generales, actuando como principal enlace entre el alumnado y la administración del centro.</li>
-    <li><strong>Gobernanza:</strong> Redacté actas ejecutivas y estandaricé los procesos administrativos para facilitar la toma de decisiones.</li>
-    <li><strong>Supervisión financiera:</strong> Me encargué de la contabilidad básica y de la asignación de recursos para las actividades de la asociación.</li>
-  </ul>
-
-  <h1>Habilidades</h1>
-  <ul>
-    <li><strong>Análisis Técnico y de Datos:</strong> Avanzado: Microsoft Excel (Tablas, Fórmulas Complejas), Power BI, PowerPoint. Intermedio: SQL (Manejo de Bases de Datos), Java (Conceptos de POO), IBM SPSS.</li>
-    <li><strong>Marketing Digital:</strong> HubSpot Email Marketing, Google Analytics, Estrategias de E-Commerce.</li>
-    <li><strong>Project Management & Habilidades Blandas:</strong> Orientación al cliente y manejo de stakeholders. Liderazgo de equipos multifuncionales. Comunicación persuasiva y oratoria pública.</li>
-    <li><strong>Lenguajes:</strong> Inglés: Nivel C2 (Proficiencia Igual a Nativa) - Capaz de negociación técnica. Español: Nativo.</li>
-  </ul>
-
-  <h1>Educación</h1>
-  <h2>Universidad Politécnica Salesiana | Quito</h2>
-  <p>Licenciatura en Negocios Digitales | En Progreso (Sexto Semestre)</p>
-  <ul>
-    <li><strong>Distinción:</strong> Consistentemente en los primeros lugares de la carrera.</li>
-    <li><strong>Asignaturas Relevantes:</strong> Análisis de Datos, Estrategia Digital, Business Management, Diseño de Proyectos.</li>
-  </ul>
-
-  <h2>Universidad de las Fuerzas Armadas (ESPE) | Quito</h2>
-  <p>Licenciatura en Comercio Exterior | 4 Niveles Cursados</p>
-  <ul>
-    <li><strong>Liderazgo:</strong> Coordinador estratégico del Club de Política Exterior & Diplomacia.</li>
-  </ul>
-
-  <h2>Franz Schubert School</h2>
-  <p>Bachillerato General Unificado | 2017</p>
-  <ul>
-    <li><strong>Premio:</strong> Mejor Egresado de la Institución en la Promoción 2017</li>
-  </ul>
+    navOverlay.addEventListener('click', closeMenu);
+  </script>
 </body>
 </html>

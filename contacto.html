@@ -1,20 +1,16 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-   <meta charset="UTF-8">
-   <meta name="viewport" content="width=device-width; initial-scale=1.0">
+<head>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contacto</title>
+    <title>Contacto | Mi Portafolio</title>
     <link rel="stylesheet" href="estilos.css">
-  </head>
-  <body>
+</head>
+<body>
 <header class="main-header">
-    <!-- 1. Logo a la izquierda -->
     <div class="logo-placeholder">Logo</div>
     
-    <!-- 2. Menú de 5 páginas en el centro -->
     <nav class="nav-bar">
-        <!-- Botón hamburguesa (se mantiene oculto en PC, listo para móvil) -->
         <button class="menu-toggle" aria-label="Abrir menú">☰</button>
         <div class="nav-overlay"></div>
 
@@ -30,34 +26,62 @@
         </ul>   
     </nav>
 
-    <!-- 3. Barra de búsqueda a la derecha -->
     <form class="search-form" action="#" method="GET">
         <input type="text" placeholder="Buscar..." name="search" required>
         <button type="submit" aria-label="Buscar">🔍</button>
     </form>
 </header>
+
+<main class="contacto-container">
+    <div class="contacto-header">
+        <h1>Enviar Mensaje</h1>
+        <p>Espera una respuesta en las próximas 48 horas.</p> 
+    </div>
+
+    <form class="formulario-contacto" action="https://formspree.io/f/TU_CODIGO_AQUI" method="POST">
+        
+        <div class="form-group">
+            <label for="nombre">Nombre completo</label>
+            <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
+        </div>
+
+        <div class="form-group">
+            <label for="email">Correo electrónico</label>
+            <input type="email" id="email" name="email" placeholder="tu@correo.com" required>
+        </div>
+
+        <div class="form-group">
+            <label for="asunto">Asunto</label>
+            <input type="text" id="asunto" name="asunto" placeholder="Motivo de tu mensaje" required>
+        </div>
+
+        <div class="form-group">
+            <label for="mensaje">Mensaje</label>
+            <textarea id="mensaje" name="mensaje" rows="6" placeholder="Escribe tu mensaje aquí..." required></textarea>
+        </div>
+
+        <button type="submit" class="btn-enviar">Enviar Mensaje</button>
+    </form>
+</main>
+
 <script>
     const menuToggle = document.querySelector('.menu-toggle');
     const menuClose = document.querySelector('.menu-close');
     const navMenu = document.querySelector('.nav-menu');
     const navOverlay = document.querySelector('.nav-overlay');
 
-    // Función para abrir el menú
     menuToggle.addEventListener('click', () => {
         navMenu.classList.add('open');
         navOverlay.classList.add('open');
     });
 
-    // Función para cerrar el menú
     const closeMenu = () => {
         navMenu.classList.remove('open');
         navOverlay.classList.remove('open');
     };
 
     menuClose.addEventListener('click', closeMenu);
-    navOverlay.addEventListener('click', closeMenu); // Se cierra también si tocas fuera
+    navOverlay.addEventListener('click', closeMenu);
 </script>
-   <h1>Enviar Mensajes</h1>
-   <p>Espera una respuesta en las proximas 48 horas</p> 
-  </body>
+</body>
 </html>
