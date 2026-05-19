@@ -243,14 +243,13 @@ body {
    BANNERS Y FOOTERS
    ========================================================================== */
 
-/* CORRECCIÓN: Faltaba el punto aquí */
 .banner-horizontal {
   display: flex;
   justify-content: center; 
   align-items: center;            
   background-color: #ff9114dc ; 
   color: var(--color-tarjeta);             
-  padding: 10px 20px;
+  padding: 8px 15px;
   border-radius: 12px;
   margin: 20px 0;
   box-shadow: 0 4px 15px rgba(20, 20, 20, 0.719);
@@ -402,8 +401,8 @@ body {
    ========================================= */
 
 .contenedor-principal {
-  max-width: 800px;
-  margin: 40px auto; 
+  max-width: 1100px;
+  margin: 50px auto; 
   padding: 0 20px;
   font-family: sans-serif;
 }
@@ -497,8 +496,8 @@ details[open] summary::before {
    ========================================= */
 
 .cv-container {
-  max-width: 950px;
-  margin: 40px auto;
+  max-width: 1100px;
+  margin: 50px auto;
   display: grid;
   grid-template-columns: 300px 1fr; 
   box-shadow: 0 4px 15px rgba(0,0,0,0.08);
@@ -627,7 +626,7 @@ details[open] summary::before {
    ========================================= */
 
 .contacto-container {
-  max-width: 650px;
+  max-width: 1000px;
   margin: 40px auto;
   background-color: var(--color-tarjeta);
   padding: 50px 40px;
@@ -732,5 +731,99 @@ details[open] summary::before {
   }
   .contacto-header h1 {
     font-size: 2em;
+  }
+}
+
+/* =========================================
+   ESTILOS PARA EL PORTAFOLIO (PROYECTOS)
+   ========================================= */
+
+/* Contenedor principal limitado a 1100px */
+.portafolio-container {
+  max-width: 1100px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+.portafolio-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.portafolio-header h1 {
+  font-size: 2.8em;
+  color: var(--color-texto);
+  margin-bottom: 10px;
+  line-height: 1.2;
+}
+
+.portafolio-header p {
+  font-size: 1.1em;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+/* Cuadrícula (Grid) de 2 columnas */
+.galeria-portafolio {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Crea exactamente 2 columnas del mismo ancho */
+  gap: 35px; /* Espaciado entre las tarjetas */
+}
+
+/* Diseño de la Tarjeta del Proyecto */
+.proyecto-card {
+  background-color: var(--color-tarjeta); /* Color naranja oscuro de tu paleta */
+  border-radius: 12px;
+  overflow: hidden; /* Asegura que la imagen no se salga de las esquinas redondeadas */
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Efecto al pasar el ratón */
+.proyecto-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.35);
+}
+
+/* Espacio de la Imagen (Placeholder) */
+.placeholder-imagen {
+  width: 100%;
+  height: 240px;
+  background-color: rgba(255, 255, 255, 0.1); /* Fondo semitransparente */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255, 255, 255, 0.6);
+  font-weight: bold;
+  font-size: 1.1em;
+  border-bottom: 4px solid var(--color-primario); /* Línea decorativa inferior */
+}
+
+/* Contenedor del texto de la tarjeta */
+.proyecto-info {
+  padding: 30px 25px;
+  flex-grow: 1; /* Asegura que el botón/texto empuje hasta abajo si la tarjeta crece */
+}
+
+.proyecto-info h3 {
+  margin-top: 0;
+  margin-bottom: 12px;
+  font-size: 1.5em;
+  color: var(--color-texto);
+}
+
+.proyecto-info p {
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.6;
+  margin: 0;
+  text-align: left;
+}
+
+/* Diseño adaptable (Móviles) */
+@media (max-width: 768px) {
+  .galeria-portafolio {
+    grid-template-columns: 1fr; /* Pasa a 1 sola columna en pantallas pequeñas */
+    gap: 25px;
   }
 }
