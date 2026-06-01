@@ -42,13 +42,11 @@ body {
 }
 
 /* Caja del Logo */
-.logo-placeholder {
-  background-color: var(--color-tarjeta);
-  color: var(--color-fondo);
-  padding: 8px 20px;
-  border-radius: 6px;
-  font-weight: bold;
-  white-space: nowrap; /* Evita que el texto se rompa en dos líneas */
+.logo-img {
+    width: 110px; /* Ancho máximo de la imagen */
+    height: 90px; /* Alto máximo de la imagen */
+    object-fit: contain; /* Evita que la imagen se estire o se deforme */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
 }
 
 /* Contenedor de la navegación */
@@ -350,6 +348,7 @@ body {
   border-radius: 6px;
   transition: background-color 0.3s ease, transform 0.2s ease;
   border: 1px solid rgba(255, 255, 255, 0.2);
+  align-self: center;
 }
 
 .btn-cta:hover {
